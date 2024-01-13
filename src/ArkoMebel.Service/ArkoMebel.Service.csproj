@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Boxes\Command\" />
+    <Folder Include="UseCases\Boxes\Handler\" />
+    <Folder Include="UseCases\Boxes\Queries\" />
+    <Folder Include="UseCases\Branches\Command\" />
+    <Folder Include="UseCases\Branches\Handler\" />
+    <Folder Include="UseCases\Branches\Queries\" />
+    <Folder Include="UseCases\Categories\Command\" />
+    <Folder Include="UseCases\Categories\Handler\" />
+    <Folder Include="UseCases\Categories\Queries\" />
+    <Folder Include="UseCases\Comments\Command\" />
+    <Folder Include="UseCases\Comments\Handler\" />
+    <Folder Include="UseCases\Comments\Queries\" />
+    <Folder Include="UseCases\Like\Command\" />
+    <Folder Include="UseCases\Like\Handler\" />
+    <Folder Include="UseCases\Like\Queries\" />
+    <Folder Include="UseCases\Orders\Command\" />
+    <Folder Include="UseCases\Orders\Handler\" />
+    <Folder Include="UseCases\Orders\Queries\" />
+    <Folder Include="UseCases\Photos\Command\" />
+    <Folder Include="UseCases\Photos\Handler\" />
+    <Folder Include="UseCases\Photos\Queries\" />
+    <Folder Include="UseCases\Portfolios\Command\" />
+    <Folder Include="UseCases\Portfolios\Handler\" />
+    <Folder Include="UseCases\Portfolios\Queries\" />
+    <Folder Include="UseCases\ProductBoxes\Command\" />
+    <Folder Include="UseCases\ProductBoxes\Handler\" />
+    <Folder Include="UseCases\ProductBoxes\Queries\" />
+    <Folder Include="UseCases\Productes\Command\" />
+    <Folder Include="UseCases\Productes\Handler\" />
+    <Folder Include="UseCases\Productes\Queries\" />
+    <Folder Include="UseCases\Users\Command\" />
+    <Folder Include="UseCases\Users\Handler\" />
+    <Folder Include="UseCases\Users\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArkoMebel.Domain\ArkoMebel.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

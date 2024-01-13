@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorisation.API", "src\Authorisation.API\Authorisation.API.csproj", "{0DDBA192-FC7C-4F1A-8E80-7586ABB77905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkoMebel.WebAPI", "src\ArkoMebel.WebAPI\ArkoMebel.WebAPI.csproj", "{25FD39E7-6103-453F-A0BE-DE214C4DBCD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway.API", "src\ApiGateway.API\ApiGateway.API.csproj", "{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkoMebel.Domain", "src\ArkoMebel.Domain\ArkoMebel.Domain.csproj", "{E16696F9-E4AB-4130-BFFE-9F3C975294EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkoMebel.Infrastructure", "src\ArkoMebel.DataAccess\ArkoMebel.Infrastructure.csproj", "{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkoMebel.Service", "src\ArkoMebel.Service\ArkoMebel.Service.csproj", "{98EEBB46-39F9-4D7D-95DE-DBC83475D18A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DDBA192-FC7C-4F1A-8E80-7586ABB77905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDBA192-FC7C-4F1A-8E80-7586ABB77905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDBA192-FC7C-4F1A-8E80-7586ABB77905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDBA192-FC7C-4F1A-8E80-7586ABB77905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25FD39E7-6103-453F-A0BE-DE214C4DBCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25FD39E7-6103-453F-A0BE-DE214C4DBCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25FD39E7-6103-453F-A0BE-DE214C4DBCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25FD39E7-6103-453F-A0BE-DE214C4DBCD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16696F9-E4AB-4130-BFFE-9F3C975294EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16696F9-E4AB-4130-BFFE-9F3C975294EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16696F9-E4AB-4130-BFFE-9F3C975294EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16696F9-E4AB-4130-BFFE-9F3C975294EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98EEBB46-39F9-4D7D-95DE-DBC83475D18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98EEBB46-39F9-4D7D-95DE-DBC83475D18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98EEBB46-39F9-4D7D-95DE-DBC83475D18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98EEBB46-39F9-4D7D-95DE-DBC83475D18A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0DDBA192-FC7C-4F1A-8E80-7586ABB77905} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+		{25FD39E7-6103-453F-A0BE-DE214C4DBCD5} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+		{0797F454-9FAE-4782-8BBF-93B9CDE3F3BF} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+		{E16696F9-E4AB-4130-BFFE-9F3C975294EA} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+		{45A8AAAA-99BD-44E5-8C72-96B6AA7CBBD2} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+		{98EEBB46-39F9-4D7D-95DE-DBC83475D18A} = {A256F2AD-24C8-4A69-B377-DCC2DF3C2A37}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D11D522B-1EEF-46A7-8CB8-194FB2D3FCAD}
+	EndGlobalSection
+EndGlobal
