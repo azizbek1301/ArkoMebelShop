@@ -10,14 +10,14 @@ namespace ArkoMebel.Infrastructure.Peristance
         {
             Database.Migrate();
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("USER ID = postgres; Password=root;Ssrver=localhost;Port=5432;Database=ArkoMebelDb;Integrated Security = true;Pooling = true;", builder =>
-            {
-                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
-            });
-            base.OnConfiguring(optionsBuilder);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseNpgsql("USER ID = postgres; Password=root;Ssrver=localhost;Port=5432;Database=ArkoMebelDb;Integrated Security = true;Pooling = true;", builder =>
+        //    {
+        //        builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+        //    });
+        //    base.OnConfiguring(optionsBuilder);
+        //}
 
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Box> Boxes { get; set; }
