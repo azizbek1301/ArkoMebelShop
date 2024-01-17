@@ -7,7 +7,7 @@
         public string Email { get; set; }
         public string PasswordHash{ get; set; }
         public string PhoneNumber {  get; set; }
-        public string RefreshToken {  get; set; }
+        public string RefreshToken { get; set; } 
         
 
         public ICollection<Likes> Likes { get; set; }
