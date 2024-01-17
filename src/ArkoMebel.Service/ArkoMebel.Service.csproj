@@ -10,9 +10,6 @@
     <Folder Include="UseCases\Boxes\Command\" />
     <Folder Include="UseCases\Boxes\Handler\" />
     <Folder Include="UseCases\Boxes\Queries\" />
-    <Folder Include="UseCases\Branches\Command\" />
-    <Folder Include="UseCases\Branches\Handler\" />
-    <Folder Include="UseCases\Branches\Queries\" />
     <Folder Include="UseCases\Categories\Command\" />
     <Folder Include="UseCases\Categories\Handler\" />
     <Folder Include="UseCases\Categories\Queries\" />
