@@ -9,7 +9,7 @@
         public string PhoneNumber { get; set; }
         public string Email {  get; set; }
         public int AddressId {  get; set; }
-        public string? Link {  get; set; }// telegram uchun
+        public string Link { get; set; } = default!;// telegram uchun
 
         public Address Address { get; set; }
     }
