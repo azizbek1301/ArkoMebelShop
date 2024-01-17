@@ -1,6 +1,8 @@
-﻿namespace ArkoMebel.Service.UseCases.Addresses.Commands
+﻿using MediatR;
+
+namespace ArkoMebel.Service.UseCases.Addresses.Commands
 {
-    public class UpdateAddressCommand
+    public class UpdateAddressCommand:IRequest<bool>
     {
         public int Id { get; set; }
         public string City { get; set; }

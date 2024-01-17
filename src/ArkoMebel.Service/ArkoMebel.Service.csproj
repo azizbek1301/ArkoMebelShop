@@ -37,15 +37,12 @@
     <Folder Include="UseCases\Productes\Command\" />
     <Folder Include="UseCases\Productes\Handler\" />
     <Folder Include="UseCases\Productes\Queries\" />
-    <Folder Include="UseCases\Users\Command\" />
-    <Folder Include="UseCases\Users\Handler\" />
-    <Folder Include="UseCases\Users\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
