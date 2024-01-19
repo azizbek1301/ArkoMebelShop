@@ -1,0 +1,14 @@
+li{
+    list-style: none;
+    position: relative;
+}
+
+span{
+    padding: 15px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    color: white;
+    background-color: blue;
+    border-bottom-left-radius: 13px;
+}
