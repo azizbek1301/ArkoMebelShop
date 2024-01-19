@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+    margin: 0 auto;
+    padding: 0;
+    width: 1600px;
+    box-sizing: border-box;
+    font-family: cursive;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    list-style-type: none;
+}
