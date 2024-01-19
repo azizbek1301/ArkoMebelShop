@@ -1,0 +1,31 @@
+<div class="carousel-container">
+    <div class="carousel">
+        <img src="../../../assets/reklama_carusel_1.jpg" alt="Image 1">
+        <img src="../../../assets/reklama_carusel_2.jpg" alt="Image 2">
+        <img src="../../../assets/reklama_carusel_3.jpg" alt="Image 3">
+    </div>
+    <div class="prev" onclick="prevSlide()">&#10094;</div>
+    <div class="next" onclick="nextSlide()">&#10095;</div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.carousel img').length;
+
+    function showSlide(index) {
+        const carousel = document.querySelector('.carousel');
+        const slideWidth = carousel.clientWidth;
+        const newPosition = -index * slideWidth;
+        carousel.style.transform = `translateX(${newPosition}px)`;
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+</script>
