@@ -3,6 +3,7 @@ using ArkoMebel.Service.UseCases.Categories.Command;
 using ArkoMebel.Service.UseCases.Categories.Queries;
 using ArkoMebel.WebAPI.ViewModel;
 using MediatR;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -16,22 +17,20 @@ namespace ArkoMebel.WebAPI.Controllers
         private readonly IMediator _mediatr;
 
         private readonly IMemoryCache _memoryCache;
+      
 
         public CategoryController(IMediator mediatr, IMemoryCache memoryCache)
         {
             _mediatr = mediatr;
             _memoryCache = memoryCache;
+            
         }
         [HttpPost]
-        public async ValueTask<IActionResult> CreateCategoryAsync(CategoryDto model)
+        public async ValueTask<IActionResult> CreateCategoryAsync([FromForm] CreateCategoryCommand model)
         {
-            var command = new CreateCategoryCommand()
-            {
-                Name = model.Name,
-                PhotoPath = model.PhotoPath,
-            };
+            
 
-            await _mediatr.Send(command);
+            await _mediatr.Send(model);
             return Ok("Yasaldi");
 
         }
@@ -59,15 +58,10 @@ namespace ArkoMebel.WebAPI.Controllers
         }
 
         [HttpPut]
-        public async ValueTask<IActionResult> UpdateCategoryAsync(CategoryDto model,int Id)
+        public async ValueTask<IActionResult> UpdateCategoryAsync([FromForm]UpdateCategoryCommand model)
         {
-            var command = new UpdateCategoryCommand()
-            {
-                Id = Id,
-                Name = model.Name,
-                PhotoPath = model.PhotoPath,
-            };
-            await _mediatr.Send(command);
+            
+            await _mediatr.Send(model);
             return Ok("Update");
         }
 

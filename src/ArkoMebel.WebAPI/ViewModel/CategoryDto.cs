@@ -3,6 +3,6 @@
     public class CategoryDto
     {
         public string Name { get; set; }
-        public string PhotoPath { get; set; }
+        public IFormFile PhotoPath { get; set; }
     }
 }

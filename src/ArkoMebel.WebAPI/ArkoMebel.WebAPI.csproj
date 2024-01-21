@@ -23,4 +23,9 @@
     <ProjectReference Include="..\ArkoMebel.Service\ArkoMebel.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\media\images\" />
+    <Folder Include="wwwroot\media\" />
+  </ItemGroup>
+
 </Project>
