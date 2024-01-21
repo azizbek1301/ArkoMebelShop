@@ -1,7 +1,7 @@
 ﻿using ArkoMebel.Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 
-namespace ArkoMebel.Service.Abstraction
+namespace ArkoMebel.Service.Abstraction.DataAccess
 {
     public interface IApplicationDbContext
     {
