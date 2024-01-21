@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Addresses.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
