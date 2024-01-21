@@ -1,4 +1,4 @@
-﻿using ArkoMebel.Service.Abstraction;
+﻿using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Branches.Command;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
