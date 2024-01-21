@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace ArkoMebel.Service.UseCases.Categories.Command
 {
@@ -6,6 +7,6 @@ namespace ArkoMebel.Service.UseCases.Categories.Command
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string PhotoPath { get; set; } = default!;
+        public IFormFile PhotoPath { get; set; } 
     }
 }

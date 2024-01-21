@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Categories.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +17,13 @@ namespace ArkoMebel.Service.UseCases.Categories.Handler
 
         public async Task<List<Category>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Categories.ToListAsync();
+            var command= await _context.Categories.ToListAsync();
+           
+            //if(command)
+            //{
+            //    throw new Exception("Topilmadi");
+            //}
+            return command;
         }
     }
 }

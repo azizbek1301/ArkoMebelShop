@@ -1,4 +1,5 @@
-﻿using ArkoMebel.Service.Abstraction;
+﻿using ArkoMebel.Service.Abstraction.DataAccess;
+using ArkoMebel.Service.Abstraction.File;
 using ArkoMebel.Service.UseCases.Categories.Command;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +9,12 @@ namespace ArkoMebel.Service.UseCases.Categories.Handler
     public class DeleteCategoryHandler : IRequestHandler<DeleteCategoryCommand, bool>
     {
         private readonly IApplicationDbContext _context;
+        private readonly IFileService _fileService;
 
-        public DeleteCategoryHandler(IApplicationDbContext context)
+        public DeleteCategoryHandler(IApplicationDbContext context, IFileService fileService)
         {
             _context = context;
+            _fileService = fileService;
         }
 
         public async Task<bool> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
@@ -19,14 +22,22 @@ namespace ArkoMebel.Service.UseCases.Categories.Handler
             var command = await _context.Categories.FirstOrDefaultAsync(x => x.Id == request.Id);
             if (command == null)
             {
-                return false;
+                throw new DirectoryNotFoundException("Ma'lumot topilmadi");
             }
-            else
+            try
             {
-                _context.Categories.Remove(command);
-                await _context.SaveChangesAsync(cancellationToken);
-                return true;
+                
+                await _fileService.DeleteImageAsync(command.PhotoPath);
+                
             }
+            catch(Exception ex) 
+            {
+                throw new Exception();
+            }
+
+            _context.Categories.Remove(command);
+            await _context.SaveChangesAsync(cancellationToken);
+            return true;
         }
     }
 }
