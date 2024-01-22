@@ -1,4 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
+using ArkoMebel.Service.UseCases.Photos.Command;
 using ArkoMebel.Service.UseCases.Photos.Queries;
 using ArkoMebel.WebAPI.ViewModel;
 using MediatR;
@@ -21,26 +22,17 @@ namespace ArkoMebel.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreatePhotoAsync(PhotoDto model)
+        public async ValueTask<IActionResult> CreatePhotoAsync([FromForm]CreatePhotoCommand model)
         {
-            var command = new Photo()
-            {
-                PhotoPath = model.PhotoPath,
-                ProductId = model.ProductId,
-            };
-            await _mediatr.Send(command);
+           
+            await _mediatr.Send(model);
             return Ok("Yasaldi");
         }
         [HttpGet]
         public async ValueTask<IActionResult> GetAllPhotoAsync()
         {
-            var res = _memoryCache.Get("Id");
-            if (res == null)
-            {
-                var photo = await _mediatr.Send(new GetAllPhotoQuery());
-                _memoryCache.Set(key: "Id", value: photo);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Photo>);
+            var res = await _mediatr.Send(new GetAllPhotoQuery());
+            return Ok(res);
         }
     }
 }

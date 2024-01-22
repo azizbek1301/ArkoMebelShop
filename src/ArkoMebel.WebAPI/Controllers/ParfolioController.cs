@@ -1,4 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
+using ArkoMebel.Service.UseCases.Portfolios.Command;
 using ArkoMebel.Service.UseCases.Portfolios.Queries;
 using ArkoMebel.WebAPI.ViewModel;
 using MediatR;
@@ -22,26 +23,17 @@ namespace ArkoMebel.WebAPI.Controllers
 
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreatePartfolioAsync(PartfolioDto model)
+        public async ValueTask<IActionResult> CreatePartfolioAsync([FromForm]CreatePortfolioCommand model)
         {
-            var command = new Portfolio()
-            {
-                PhotoPath = model.PhotoPath,
-                CategoryId = model.CategoryId,
-            };
-            await _mediatr.Send(command);
+            
+            await _mediatr.Send(model);
             return Ok("Yasaldi");
         }
         [HttpGet]
         public async ValueTask<IActionResult> GetAllPartfolioAsync()
         {
-            var res = _memoryCache.Get("Id");
-            if (res == null)
-            {
-                var portfolio = await _mediatr.Send(new GetAllPortfolioQuery());
-                _memoryCache.Set(key: "Id", value: portfolio);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Portfolio>);
+            var res = await _mediatr.Send(new GetAllPortfolioQuery());
+            return Ok(res);
         }
     }
 }

@@ -26,14 +26,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpPost]
         public async ValueTask<IActionResult> CreateProductBoxAsync(ProductBoxDto model)
         {
-            var command = new Prodact_Box()
-            {
-                BoxId = model.BoxId,
-                ProductId = model.ProductId,
-                Status = model.Status,
-            };
-            await _mediatr.Send(command);
-            return Ok("Yasaldi");
+            var res = await _mediatr.Send(new GetAllProductBoxQuery());
+            return Ok(res);
         }
         [HttpGet]
         public async ValueTask<IActionResult> GetAllProductBoxAsync()

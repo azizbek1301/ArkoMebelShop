@@ -36,13 +36,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllOrderResult()
         {
-            var res = _memoryCache.Get("Id");
-            if (res == null)
-            {
-                var order = await _mediatr.Send(new GetAllOrderQuery());
-                _memoryCache.Set(key: "Id", value: order);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Order>);
+            var res = await _mediatr.Send(new GetAllOrderQuery());
+            return Ok(res);
         }
     }
 }

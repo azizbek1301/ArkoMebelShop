@@ -40,13 +40,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllBranchAsync()
         {
-            var value = _memoryCache.Get("Id");
-            if(value== null)
-            {
-                var branch = await _mediator.Send(new GetAllBranchQuery());
-                _memoryCache.Set(key: "Id", value: branch); 
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Branch>);
+            var res = await _mediator.Send(new GetAllBranchQuery());
+            return Ok(res); 
         }
 
         [HttpDelete]

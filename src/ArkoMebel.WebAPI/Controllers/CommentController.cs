@@ -1,4 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
+using ArkoMebel.Service.UseCases.Comments.Command;
 using ArkoMebel.Service.UseCases.Comments.Queries;
 using ArkoMebel.Service.UseCases.Portfolios.Queries;
 using ArkoMebel.WebAPI.ViewModel;
@@ -24,29 +25,18 @@ namespace ArkoMebel.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreateCommentAsync(CommentDto model)
+        public async ValueTask<IActionResult> CreateCommentAsync([FromForm]CreateCommentCommand model)
         {
-            var command = new Comment()
-            {
-                UserName = model.UserName,
-                Text = model.Text,
-                PhotoPath = model.PhotoPath,
-                ProductId = model.ProductId,
-            };
-            await _mediatr.Send(command);
+           
+            await _mediatr.Send(model);
             return Ok("Yasaldi");
         }
 
         [HttpGet]
         public async ValueTask<IActionResult> GetAllCommentAsync()
         {
-            var res = _memoryCache.Get("Id");
-            if (res == null)
-            {
-                var comment = await _mediatr.Send(new GetAllCommentQuery());
-                _memoryCache.Set(key: "Id", value: comment);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Comment>);
+            var res = await _mediatr.Send(new GetAllCommentQuery());
+            return Ok(res);
         }
     }
 }

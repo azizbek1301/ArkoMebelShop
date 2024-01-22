@@ -36,19 +36,15 @@ namespace ArkoMebel.WebAPI.Controllers
             };
 
             await _mediatr.Send(command);
+            
             return Ok("Yasaldi");
         }
 
         [HttpGet]
         public async ValueTask<IActionResult> GetAllProductAsync()
         {
-            var res = _memoryCache.Get("Id");
-            if(res == null)
-            {
-                var product = await _mediatr.Send(new GetAllProductQuery());
-                _memoryCache.Set(key:"Id",value: product);
-            }
-            return Ok(_memoryCache.Get(key:"Id")as List<Product>);
+            var res = await _mediatr.Send(new GetAllProductQuery());
+            return Ok(res);
         }
     }
 }

@@ -37,13 +37,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllCategoryAsync()
         {
-            var value = _memoryCache.Get("Id");
-            if(value == null)
-            {
-                var category = await _mediatr.Send(new GetAllCategoryQuery());
-                _memoryCache.Set(key: "Id", value: category);   
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Category>);
+            var res=await _mediatr.Send(new GetAllCategoryQuery());
+            return Ok(res);
         }
 
         [HttpDelete]

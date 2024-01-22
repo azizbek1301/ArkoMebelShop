@@ -36,13 +36,9 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllLikes()
         {
-            var res = _memoryCache.Get("Id");
-            if (res == null)
-            {
-                var like = await _mediatr.Send(new GetAllLikeQuery());
-                _memoryCache.Set(key: "Id", value: like);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Likes>);
+            var res =await _mediatr.Send(new GetAllLikeQuery());
+            return Ok(res);
+           
         }
     }
 }

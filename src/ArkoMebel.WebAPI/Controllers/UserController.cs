@@ -40,15 +40,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllUserAsync()
         {
-            var value = _memoryCache.Get("Id");
-            if(value==null)
-            {
-                var user = await _mediatr.Send(new GetAllUserCommand());
-                _memoryCache.Set(
-                    key:"Id",
-                    value:user);
-            }
-            return Ok(_memoryCache.Get(key:"Id") as List<User>);
+            var res = await _mediatr.Send(new GetAllUserCommand());
+            return Ok(res);
         }
 
         [HttpDelete]

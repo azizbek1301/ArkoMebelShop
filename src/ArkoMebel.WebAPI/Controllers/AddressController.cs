@@ -36,15 +36,8 @@ namespace ArkoMebel.WebAPI.Controllers
         [HttpGet]
         public async ValueTask<IActionResult>GetAllAddressAsync()
         {
-            var value = _memoryCache.Get("Id");
-            if(value == null)
-            {
-                var address=await _mediatr.Send(new GetAllAddressCommand());
-                _memoryCache.Set(
-                    key: "Id",
-                    value: address);
-            }
-            return Ok(_memoryCache.Get(key: "Id") as List<Address>);
+           var res=await _mediatr.Send(new GetAllAddressCommand());
+            return Ok(res); 
         }
 
         [HttpDelete]
