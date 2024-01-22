@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.ProductBoxes.Command;
 using MediatR;
 
@@ -22,6 +22,8 @@ namespace ArkoMebel.Service.UseCases.ProductBoxes.Handler
                 BoxId = request.BoxId,
                 Status = request.Status,
             };
+            await _context.Prodact_Boxes.AddAsync(command);
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

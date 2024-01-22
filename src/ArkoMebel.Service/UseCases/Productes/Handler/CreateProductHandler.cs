@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Productes.Command;
 using MediatR;
 
@@ -25,6 +25,8 @@ namespace ArkoMebel.Service.UseCases.Productes.Handler
                 CategoryId = request.CategoryId,
              
             };
+            _context.Products.Add(command);
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

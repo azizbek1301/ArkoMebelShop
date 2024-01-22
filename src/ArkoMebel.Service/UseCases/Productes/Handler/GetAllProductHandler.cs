@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Productes.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +17,8 @@ namespace ArkoMebel.Service.UseCases.Productes.Handler
 
         public async Task<List<Product>> Handle(GetAllProductQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Products.ToListAsync();
+            var com = await _context.Products.ToListAsync(cancellationToken);
+            return com;
         }
     }
 }

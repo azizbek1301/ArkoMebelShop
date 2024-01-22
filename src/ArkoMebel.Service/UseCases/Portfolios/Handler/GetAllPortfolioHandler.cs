@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Portfolios.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +17,7 @@ namespace ArkoMebel.Service.UseCases.Portfolios.Handler
 
         public async Task<List<Portfolio>> Handle(GetAllPortfolioQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Portfolio.ToListAsync();
+            return await _context.Portfolio.ToListAsync(cancellationToken);
         }
     }
 }

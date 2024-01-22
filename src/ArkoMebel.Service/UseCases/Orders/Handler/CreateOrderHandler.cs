@@ -1,5 +1,5 @@
 ﻿using ArkoMebel.Domain.Entites;
-using ArkoMebel.Service.Abstraction;
+using ArkoMebel.Service.Abstraction.DataAccess;
 using ArkoMebel.Service.UseCases.Orders.Command;
 using MediatR;
 
@@ -21,6 +21,9 @@ namespace ArkoMebel.Service.UseCases.Orders.Handler
                 BoxId = request.BoxId,
                 AddressId = request.AddressId,
             };
+
+            _context.Orders.Add(command);
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace ArkoMebel.Service.UseCases.Comments.Command
 {
@@ -7,7 +8,7 @@ namespace ArkoMebel.Service.UseCases.Comments.Command
         public string UserName { get; set; }
         public string Text { get; set; }
         public int ProductId { get; set; }
-        public string? PhotoPath { get; set; } = default!;
+        public IFormFile? PhotoPath { get; set; } = default!;
 
     }
 }

@@ -27,7 +27,7 @@ namespace ArkoMebel.Service.UseCases.Branches.Handler
                 Link = request.Link,
             };
 
-            await _context.Branches.AddAsync(branch);
+            _context.Branches.Add(branch);
             await _context.SaveChangesAsync(cancellationToken);
         }
     }

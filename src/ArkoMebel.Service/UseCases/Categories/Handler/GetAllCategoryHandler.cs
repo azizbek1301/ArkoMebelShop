@@ -17,7 +17,7 @@ namespace ArkoMebel.Service.UseCases.Categories.Handler
 
         public async Task<List<Category>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            var command= await _context.Categories.ToListAsync();
+            var command= await _context.Categories.ToListAsync(cancellationToken);
            
             //if(command)
             //{
