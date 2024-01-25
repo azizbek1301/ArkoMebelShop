@@ -1,0 +1,30 @@
+.nashi {
+    color: #000;
+    font-family: "PT Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 30px;
+  }
+  ul{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .card{
+      display: flex;
+      gap: 10px;
+      background-color: gray;
+      padding: 20px 40px;
+  }
+  
+  .card p{
+      font-weight: 800;
+      font-size: 20px;
+  }
+  
+  img{
+      width: 60px;
+  }
+  

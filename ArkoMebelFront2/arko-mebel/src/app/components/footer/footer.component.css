@@ -1,0 +1,9 @@
+.footer{
+    display: flex;
+}
+ul{
+    list-style: none;
+}
+img{
+    width: 170px;
+}

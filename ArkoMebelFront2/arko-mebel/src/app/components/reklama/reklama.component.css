@@ -1,0 +1,35 @@
+.carousel {
+    padding-top: 100px;
+    display: flex;
+    width: 100%; 
+  }
+  
+  .carousel-item{
+    width: 100%; 
+  }
+  
+  .carousel-item img{
+    width: 50%; 
+  }
+  .active {
+    transform: translateX(0);
+  }
+  
+  .button-next {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 80px;
+    background-color: rgba(#2af210,  0);
+    border: none;
+    font-size: 40px;
+  }
+
+  .button-prev {
+    margin-right: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 120px;
+    background-color: rgba(#0a80bf,  0);
+    border: none;
+    font-size: 40px;
+  }

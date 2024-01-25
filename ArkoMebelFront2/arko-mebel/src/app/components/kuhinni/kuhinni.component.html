@@ -1,0 +1,18 @@
+Oshxona mebellari
+
+<!-- @for (let i = 0; i < products.length; i += 3) 
+{
+    <div class="row">
+        @for (let j = 0; j < 3 && i + j < products.length; j++) 
+        {
+            <div class="col-md-4">
+                <app-product-catalog [product]="products[i + j]"></app-product-catalog>
+            </div>
+        }
+    </div>
+} -->
+
+@for (product of products; track product.id) 
+{ 
+    <app-product-catalog [product]="product"></app-product-catalog>
+}
