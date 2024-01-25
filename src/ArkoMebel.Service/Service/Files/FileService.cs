@@ -42,12 +42,12 @@ namespace ArkoMebel.Service.Service.Files
         {
             string newImageName = MediaHelper.MakeImageName(file.FileName.ToLower());
             string subPath = Path.Combine(MEDIA, IMAGES, newImageName);
+            string GetPath = MEDIA + "/" + IMAGES + "/" + newImageName;
             string path = Path.Combine(ROOTPATH, subPath);
-
             using (var stream = new FileStream(path, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
-                return subPath;
+                return GetPath;
             }
         }
     }
