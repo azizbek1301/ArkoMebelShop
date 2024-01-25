@@ -38,7 +38,19 @@ namespace ArkoMebel.WebAPI.Controllers
         public async ValueTask<IActionResult> GetAllCategoryAsync()
         {
             var res=await _mediatr.Send(new GetAllCategoryQuery());
-            return Ok(res);
+            List<GetAllCategoryDto> categories = new List<GetAllCategoryDto>();
+            foreach(var item in res)
+            {
+
+                GetAllCategoryDto result = new GetAllCategoryDto()
+                {
+                    id =item.Id,
+                    Name = item.Name,
+                    PhotoPath=item.PhotoPath
+                };
+                categories.Add(result);
+            }
+            return Ok(categories);
         }
 
         [HttpDelete]

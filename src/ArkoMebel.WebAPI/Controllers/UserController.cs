@@ -27,7 +27,7 @@ namespace ArkoMebel.WebAPI.Controllers
             {
                 FullName = model.FullName,
                 Email = model.Email,
-                PasswordHash = model.PasswordHash,
+                PasswordHash = model.Password,
                 PhoneNumber = model.PhoneNumber,
                 RefreshToken = Guid.NewGuid().ToString(),   
 
@@ -65,7 +65,7 @@ namespace ArkoMebel.WebAPI.Controllers
                 Id=Id,
                 FullName = model.FullName,
                 Email = model.Email,
-                PasswordHash = model.PasswordHash,
+                PasswordHash = model.Password,
                 PhoneNumber=model.PhoneNumber,
                 RefreshToken=Guid.NewGuid().ToString(),
             };
