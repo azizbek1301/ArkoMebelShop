@@ -7,13 +7,15 @@ import { ReklamaComponent } from './pages/reklama/reklama.component';
 import { ReklamaOstiComponent } from './pages/reklama-osti/reklama-osti.component';
 import { KatalogComponent } from './pages/katalog/katalog.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { RegistratsiyaComponent } from './pages/registratsiya/registratsiya.component';
+import { ProductCatalogComponent } from './pages/product-catalog/product-catalog.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,NavbarComponent,KuhnniComponent,ReklamaComponent,ReklamaOstiComponent,
     KatalogComponent,
-    FooterComponent
+    FooterComponent,ProductCatalogComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
