@@ -1,1 +1,5 @@
-<p>kuhnni works!</p>
+
+@for (product of products; track product.id) 
+{ 
+    <app-product-catalog [product]="product"></app-product-catalog>
+}

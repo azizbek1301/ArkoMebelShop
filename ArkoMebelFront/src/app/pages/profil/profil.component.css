@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .main {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px;
+    font-family: "PT Sans";
+  }
+  .way {
+    color: #384d54;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .prof_viyti {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 15px;
+  }
+  .infos {
+    margin-top: 50px;
+    display: flex;
+  }
+  .main_info {
+    width: 20%;
+  }
+  .profil {
+    display: flex;
+    gap: 5px;
+    color: #384685;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid #e2e2e2;
+    width: 258px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+  .profil1 {
+    display: flex;
+    gap: 5px;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid #e2e2e2;
+    width: 258px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  form input {
+    margin-bottom: 25px;
+  }
+  form div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .lichnie h1 {
+    color: #1d1818;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  label {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -30px;
+  }
+  input {
+    width: 357px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #f3f3f3;
+    color: #564d4d;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    padding: 12px;
+  }
+  .lastgap {
+    color: #564d4d;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    text-align: end;
+    font-weight: 300;
+  }
+  .address {
+    margin-left: 50px;
+  }
+  .address h1 {
+    color: #1d1818;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  .btn {
+    border-radius: 5px;
+    background: #384685;
+    width: 295px;
+    height: 48px;
+    flex-shrink: 0;
+    padding: 12px 45px;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    display: flex;
+    align-items: center;
+  }
+  .btn-div {
+    display: flex;
+    justify-content: center;
+  }

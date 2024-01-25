@@ -189,21 +189,23 @@
     left: 294px;
   }
   
-  .screen .overlap-group-2 {
+  .screen .view input{
     position: relative;
     width: 296px;
-    height: 45px;
+    height: 35px;
+    padding: 0 10px;
     border-radius: 25px;
     border: 1px solid;
     border-color: #a8d1e7;
+    outline: none;
   }
   
   .screen .interface {
     position: absolute;
     width: 23px;
     height: 23px;
-    top: 10px;
-    left: 261px;
+    top: 20px;
+    left: 300px;
   }
   
   .screen .text-wrapper-7 {
