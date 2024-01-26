@@ -3,6 +3,7 @@ using ArkoMebel.Service.UseCases.Users.Command;
 using ArkoMebel.Service.UseCases.Users.Queries;
 using ArkoMebel.WebAPI.ViewModel;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -37,6 +38,7 @@ namespace ArkoMebel.WebAPI.Controllers
             return Ok("Yasaldi");
         }
 
+        [Authorize(Roles ="SuperAdmin")]
         [HttpGet]
         public async ValueTask<IActionResult> GetAllUserAsync()
         {
